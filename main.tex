@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper,roman]{moderncv}        
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\nopagenumbers{}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+\usepackage{multicol}
+\usepackage{import}
+
+% personal data
+\name{Atul}{Vidyarthi}
+\address{Computer Science Engineering Student}{}{}
+
+%----------------------------------------------------------------------------------
+
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+
+\newcommand{\cvevent}[2]{%
+  {\large\color{accent}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{emphasis}#2}\par
+  \smallskip}
+  \normalsize
+}
+
+\newcommand{\course}[2]{%
+  {\large\color{accent}#1\par}
+  \normalsize\quad
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{emphasis}#2}\par
+  \quad}
+  \normalsize
+}
+
+
+\RequirePackage{tikz}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+\vspace*{-26mm}
+
+\begin{center}
+\begin{tabular}{ c c c }
+ \faEnvelopeO \enspace atulvidyarthi29@gmail.com &  \faMobile\enspace 7295908780 & \faLinkedin\enspace linkedin.com/in/atul-vidyarthi-320a18150\\  
+\end{tabular}
+\begin{tabular}{ c c c }
+ \faGithub \enspace github.com/atulvidyarthi29 &  \faTwitter \enspace twitter.com/gcoderx \\  
+\end{tabular}
+\end{center}
+
+\section{EDUCATION}
+
+\cvevent{Indian Institute of Information Technology, Sri City, Chitoor, Andhra Pradesh }{B. Tech (3rd Year) \hspace{6} CGPA- 8.24}
+\medskip
+\cvevent{St. Michael's High School, Digha, Patna}{Intermediate \hspace{6} CBSE - 89.4\% }
+\medskip
+\cvevent{St. Paul's High School, Digha, Patna}{Matriculation \hspace{6} ICSE - 97.2 \% }
+
+
+\section{ACADEMIC PROJECTS}
+
+{\customcvproject{Digital College}{}
+  {\begin{itemize}
+    \item A Learning Management System made on Django with materialized css and MySQL as ASE-1 project
+    \item An end-to-end application for students and faculty with clubs, forum, classroom and grades 
+  \end{itemize}
+  }
+}
+\medskip
+{\customcvproject{Popcorn}{}
+{\begin{itemize}
+    \item A Movie Rating System
+    \item A Web Application made on Django and MySQL as DBMS project
+    \item Users could rate and review movies
+    \item Used triggers, procedures, events, fulltext search and other DB components
+\end{itemize}
+}
+\medskip
+{\customcvproject{Echo}{}
+{\begin{itemize}
+  \item An android app made with Kotlin
+  \item The App lists and plays all the songs from the device. It also has a cool visualizer with shake-to-change feature
+  \item Followed the Internshala training
+\end{itemize}
+}
+}
+
+\section{KEY SKILLS}
+\medskip
+\cvtag{C}
+\cvtag{Java}
+\cvtag{Python}
+\cvtag{MySQL}
+\cvtag{Django}
+\cvtag{HTML}
+\cvtag{CSS}
+\cvtag{Android Studio}
+\cvtag{Kotlin}
+\cvtag{Flutter}
+\cvtag{Dart}
+\cvtag{Firebase}
+\cvtag{Linux}
+\cvtag{Git}
+\cvtag{Competitive Coding}
+\cvtag{Machine Learning}
+
+
+\section{COURSES}
+\course{Android Development}{Internshala Training}
+
+\course{Greedy Algorithms and Dynamic programming}{Coursera}
+
+\course{The Complete Cyber Security Course - Hacker Exposed!}{Udemy}
+
+\course{Advanced Java Programming}{Udemy}
+      
+}
+
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
